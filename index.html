@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxypay</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Bloxypay</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Games</a>
+            <a href="#">Shop</a>
+            <a href="#">Support</a>
+            <a href="#">Account</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <p class="small-title">WELCOME TO BLOXYPAY</p>
+
+                <h1>Your Gaming<br>
+                    Marketplace.</h1>
+
+                <p class="description">
+                    Discover digital gaming items from your favorite games.
+                </p>
+
+                <button onclick="browseGames()">
+                    Browse Games
+                </button>
+            </div>
+        </section>
+
+        <section class="games">
+
+            <h2>Shop by Game</h2>
+            <p class="section-description">
+                Choose a game to start shopping.
+            </p>
+
+            <div class="game-grid">
+
+                <div class="game-card" onclick="selectGame('Steal a Brainrot')">
+                    <div class="game-icon">🧠</div>
+                    <h3>Steal a Brainrot</h3>
+                    <p>Browse Items</p>
+                </div>
+
+                <div class="game-card" onclick="selectGame('Blox Fruits')">
+                    <div class="game-icon">🍎</div>
+                    <h3>Blox Fruits</h3>
+                    <p>Browse Items</p>
+                </div>
+
+                <div class="game-card" onclick="selectGame('Murder Mystery 2')">
+                    <div class="game-icon">🔪</div>
+                    <h3>Murder Mystery 2</h3>
+                    <p>Browse Items</p>
+                </div>
+
+                <div class="game-card" onclick="selectGame('Other Games')">
+                    <div class="game-icon">🎮</div>
+                    <h3>More Games</h3>
+                    <p>Coming Soon</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Bloxypay. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

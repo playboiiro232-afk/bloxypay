@@ -423,3 +423,58 @@ footer {
         padding: 40px 20px;
     }
 }
+/* SHOP PAGE */
+
+.shop-header {
+    padding: 100px 8% 50px;
+
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(147, 51, 234, 0.25),
+            transparent 35%
+        ),
+        #07050d;
+}
+
+.shop-header h1 {
+    font-size: 55px;
+    margin: 10px 0;
+}
+
+.shop-header p {
+    color: #91889b;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+.filter-bar button {
+    padding: 11px 16px;
+
+    border-radius: 8px;
+
+    background: #120d1b;
+
+    border: 1px solid #30203f;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.filter-bar button:hover {
+    background: #9333ea;
+}
+
+.rarity {
+    color: #8e8498;
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}

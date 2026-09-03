@@ -5,9 +5,7 @@ function browseGames() {
 }
 
 function browseProducts() {
-    document.getElementById("products").scrollIntoView({
-        behavior: "smooth"
-    });
+    window.location.href = "shop.html";
 }
 
 function selectGame(game) {
@@ -24,4 +22,27 @@ function openCart() {
 
 function contactSupport() {
     alert("Bloxypay Support will be available soon!");
+}
+
+
+function filterProducts(category) {
+
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(function(product) {
+
+        if (category === "all") {
+            product.style.display = "block";
+        }
+
+        else if (product.classList.contains(category)) {
+            product.style.display = "block";
+        }
+
+        else {
+            product.style.display = "none";
+        }
+
+    });
+
 }

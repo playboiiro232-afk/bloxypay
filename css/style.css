@@ -633,3 +633,31 @@ footer {
 .cart-summary strong {
     font-size: 24px;
 }
+/* SAB SEARCH */
+
+.sab-tools {
+    margin-bottom: 30px;
+}
+
+.sab-tools input {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 18px;
+
+    background: #100b18;
+    border: 1px solid #382252;
+    border-radius: 10px;
+
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.sab-tools input:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.15);
+}
+
+.sab-tools input::placeholder {
+    color: #81798d;
+}

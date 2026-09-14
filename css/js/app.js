@@ -313,3 +313,47 @@ function addCurrentProduct() {
 // ============================
 
 displayCart();
+// ============================
+// BRAINROT SEARCH
+// ============================
+
+function searchBrainrots() {
+
+    const searchInput =
+        document.getElementById("brainrot-search");
+
+    if (!searchInput) {
+        return;
+    }
+
+    const search =
+        searchInput.value.toLowerCase();
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    products.forEach(function(product) {
+
+        const name =
+            product.querySelector("h3");
+
+        if (!name) {
+            return;
+        }
+
+        const productName =
+            name.textContent.toLowerCase();
+
+        if (productName.includes(search)) {
+
+            product.style.display = "block";
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}

@@ -419,3 +419,19 @@ function resetInventory() {
     }
 
 }
+function goToCheckout() {
+
+    const cart = getCart();
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty!");
+
+        return;
+
+    }
+
+    window.location.href =
+        "checkout.html";
+
+}

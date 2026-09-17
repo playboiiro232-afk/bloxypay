@@ -504,7 +504,7 @@ function displayCheckout() {
 // PAYMENT PLACEHOLDER
 // ============================
 
-function startPayment() {
+async function startPayment() {
 
     const email =
         document.getElementById(
@@ -513,19 +513,68 @@ function startPayment() {
 
     if (!email) {
 
-        alert(
-            "Please enter your email first."
-        );
+        alert("Please enter your email first.");
 
         return;
 
     }
 
-    alert(
-        "Secure payment will be connected here."
-    );
+    const cart = getCart();
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty!");
+
+        return;
+
+    }
+
+    try {
+
+        const response = await fetch(
+            "/api/create-order.js",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    email: email,
+                    items: cart
+                })
+
+            }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok) {
+
+            throw new Error(
+                result.error || "Order creation failed."
+            );
+
+        }
+
+        alert(
+            "Order created!\n\nOrder ID: " +
+            result.orderId +
+            "\n\nStatus: " +
+            result.status
+        );
+
+        console.log("Bloxypay Order:", result);
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Something went wrong creating your order."
+        );
+
+    }
 
 }
-
-
-displayCheckout();

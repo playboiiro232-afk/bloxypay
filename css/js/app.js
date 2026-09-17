@@ -357,3 +357,65 @@ function searchBrainrots() {
     });
 
 }
+// ============================
+// INVENTORY STOCK FILTER
+// ============================
+
+function filterStock(type) {
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    products.forEach(function(product) {
+
+        const stock =
+            product.getAttribute("data-stock");
+
+        if (type === "all") {
+
+            product.style.display = "block";
+
+        }
+
+        else if (stock === type) {
+
+            product.style.display = "block";
+
+        }
+
+        else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+// ============================
+// RESET INVENTORY
+// ============================
+
+function resetInventory() {
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    products.forEach(function(product) {
+
+        product.style.display = "block";
+
+    });
+
+    const search =
+        document.getElementById("brainrot-search");
+
+    if (search) {
+
+        search.value = "";
+
+    }
+
+}

@@ -435,3 +435,97 @@ function goToCheckout() {
         "checkout.html";
 
 }
+// ============================
+// CHECKOUT DISPLAY
+// ============================
+
+function displayCheckout() {
+
+    const container =
+        document.getElementById("checkout-items");
+
+    const totalElement =
+        document.getElementById("checkout-total");
+
+    if (!container || !totalElement) {
+        return;
+    }
+
+    const cart = getCart();
+
+    container.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(function(item) {
+
+        const itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+        const element =
+            document.createElement("div");
+
+        element.className =
+            "checkout-item";
+
+        element.innerHTML = `
+
+            <div>
+
+                <strong>
+                    ${item.name}
+                </strong>
+
+                <p>
+                    Quantity: ${item.quantity}
+                </p>
+
+            </div>
+
+            <strong>
+                $${itemTotal.toFixed(2)}
+            </strong>
+
+        `;
+
+        container.appendChild(element);
+
+    });
+
+    totalElement.textContent =
+        "$" + total.toFixed(2);
+
+}
+
+
+// ============================
+// PAYMENT PLACEHOLDER
+// ============================
+
+function startPayment() {
+
+    const email =
+        document.getElementById(
+            "customer-email"
+        ).value.trim();
+
+    if (!email) {
+
+        alert(
+            "Please enter your email first."
+        );
+
+        return;
+
+    }
+
+    alert(
+        "Secure payment will be connected here."
+    );
+
+}
+
+
+displayCheckout();

@@ -1,659 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<section class="section">
-   <div class="sab-tools">
 
-    <input
-        type="text"
-        id="brainrot-search"
-        placeholder="🔎 Search Brainrots..."
-        oninput="searchBrainrots()"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-</div>
     <title>Bloxypay | Steal a Brainrot</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
 <header class="navbar">
 
-    <div class="logo">Bloxypay</div>
+    <div class="logo">
+        Bloxypay
+    </div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="index.html#games">Games</a>
-        <a href="#support">Support</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="shop.html">
+            Shop
+        </a>
+
+        <a href="index.html#games">
+            Games
+        </a>
+
+        <a href="#support">
+            Support
+        </a>
+
     </nav>
 
-    <button class="cart-button" onclick="openCart()">
+    <button
+        class="cart-button"
+        onclick="openCart()">
+
         🛒 Cart
+
     </button>
 
 </header>
 
+
 <main>
+
+    <!-- PAGE HEADER -->
 
     <section class="shop-header">
 
         <p class="purple-text">
-            BLOXYPAY GAME STORE
+            BLOXYPAY INVENTORY
         </p>
 
-        <h1>🧠 Steal a Brainrot</h1>
+        <h1>
+            Steal a Brainrot
+        </h1>
 
         <p>
-            Browse available items.
+            Browse available Brainrots and find something you want.
         </p>
 
     </section>
 
+
+    <!-- SHOP -->
+
     <section class="section">
 
-        <div class="product-grid">
+        <!-- SEARCH -->
 
-            <!-- Garama and Madundung -->
-            <div class="product-card">
+        <div class="sab-tools">
 
-                <div class="product-image">🧠</div>
+            <input
+                type="text"
+                id="brainrot-search"
+                placeholder="🔎 Search Brainrots..."
+                oninput="searchBrainrots()">
 
-                <div class="product-info">
+        </div>
 
-                    <span>STEAL A BRAINROT</span>
 
-                    <h3>Garama and Madundung</h3>
+        <div class="shop-layout">
 
-                    <p class="rarity">
-                        Value: TBD
-                    </p>
 
-                    <div class="product-bottom">
+            <!-- SIDEBAR -->
 
-                        <strong>Price TBD</strong>
+            <aside class="inventory-sidebar">
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                <h2>
+                    Shop Inventory
+                </h2>
+
+
+                <!-- GAMES -->
+
+                <div class="inventory-section">
+
+                    <h3>
+                        Games
+                    </h3>
+
+
+                    <button
+                        onclick="filterProducts('all')">
+
+                        🎮 All Games
+
+                    </button>
+
+
+                    <button
+                        onclick="window.location.href='sab.html'">
+
+                        🧠 Steal a Brainrot
+
+                    </button>
+
+
+                    <button
+                        onclick="alert('Blox Fruits store coming soon!')">
+
+                        🍎 Blox Fruits
+
+                    </button>
+
+
+                    <button
+                        onclick="alert('MM2 store coming soon!')">
+
+                        🔪 Murder Mystery 2
+
+                    </button>
+
+                </div>
+
+
+                <!-- STOCK -->
+
+                <div class="inventory-section">
+
+                    <h3>
+                        Stock
+                    </h3>
+
+
+                    <button
+                        onclick="filterStock('in-stock')">
+
+                        🟢 In Stock
+
+                    </button>
+
+
+                    <button
+                        onclick="filterStock('sold-out')">
+
+                        🔴 Sold Out
+
+                    </button>
+
+
+                    <button
+                        onclick="filterStock('all')">
+
+                        📦 Show All
+
+                    </button>
+
+                </div>
+
+
+                <!-- RESET -->
+
+                <div class="inventory-section">
+
+                    <button
+                        onclick="resetInventory()">
+
+                        ↻ Reset Filters
+
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+            <!-- PRODUCTS -->
+
+            <div class="product-grid">
+
+
+                <!-- GARMA -->
+
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/brainrots/garama-and-madundung.png"
+                            alt="Garama and Madundung">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
+
+                        <h3>
+                            Garama and Madundung
+                        </h3>
+
+                        <p class="rarity">
+                            Value: TBD
+                        </p>
+
+                        <p class="rarity">
+                            🟢 Stock: 5
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $12.99
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Garama and Madundung', 12.99)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- POPURU -->
 
-            <!-- Popuru and Fizzuru -->
-            <div class="product-card">
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
 
-                <div class="product-image">🧠</div>
+                    <div class="product-image">
+                        🧠
+                    </div>
 
-                <div class="product-info">
+                    <div class="product-info">
 
-                    <span>STEAL A BRAINROT</span>
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
 
-                    <h3>Popuru and Fizzuru</h3>
+                        <h3>
+                            Popuru and Fizzuru
+                        </h3>
 
-                    <p class="rarity">
-                        Value: 55M
-                    </p>
+                        <p class="rarity">
+                            Value: 55M
+                        </p>
 
-                    <div class="product-bottom">
+                        <p class="rarity">
+                            🟢 Stock: 8
+                        </p>
 
-                        <strong>Price TBD</strong>
+                        <div class="product-bottom">
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                            <strong>
+                                $10.99
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Popuru and Fizzuru', 10.99)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- SPAGHETTI -->
 
-            <!-- Spaghetti Tualetti -->
-            <div class="product-card">
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
 
-                <div class="product-image">🧠</div>
+                    <div class="product-image">
+                        🧠
+                    </div>
 
-                <div class="product-info">
+                    <div class="product-info">
 
-                    <span>STEAL A BRAINROT</span>
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
 
-                    <h3>Spaghetti Tualetti</h3>
+                        <h3>
+                            Spaghetti Tualetti
+                        </h3>
 
-                    <p class="rarity">
-                        Value: 60M
-                    </p>
+                        <p class="rarity">
+                            Value: 60M
+                        </p>
 
-                    <div class="product-bottom">
+                        <p class="rarity">
+                            🟢 Stock: 7
+                        </p>
 
-                        <strong>Price TBD</strong>
+                        <div class="product-bottom">
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                            <strong>
+                                $11.99
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Spaghetti Tualetti', 11.99)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- FESTIVE -->
 
-            <!-- Festive 67 -->
-            <div class="product-card">
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
 
-                <div class="product-image">🧠</div>
+                    <div class="product-image">
+                        🧠
+                    </div>
 
-                <div class="product-info">
+                    <div class="product-info">
 
-                    <span>STEAL A BRAINROT</span>
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
 
-                    <h3>Festive 67</h3>
+                        <h3>
+                            Festive 67
+                        </h3>
 
-                    <p class="rarity">
-                        Value: 67M
-                    </p>
+                        <p class="rarity">
+                            Value: 67M
+                        </p>
 
-                    <div class="product-bottom">
+                        <p class="rarity">
+                            🟢 Stock: 6
+                        </p>
 
-                        <strong>Price TBD</strong>
+                        <div class="product-bottom">
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                            <strong>
+                                $12.99
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Festive 67', 12.99)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- LOS SPAGHETTIS -->
 
-            <!-- Los Spaghettis -->
-            <div class="product-card">
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
 
-                <div class="product-image">🧠</div>
+                    <div class="product-image">
+                        🧠
+                    </div>
 
-                <div class="product-info">
+                    <div class="product-info">
 
-                    <span>STEAL A BRAINROT</span>
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
 
-                    <h3>Los Spaghettis</h3>
+                        <h3>
+                            Los Spaghettis
+                        </h3>
 
-                    <p class="rarity">
-                        Value: 70M
-                    </p>
+                        <p class="rarity">
+                            Value: 70M
+                        </p>
 
-                    <div class="product-bottom">
+                        <p class="rarity">
+                            🟢 Stock: 6
+                        </p>
 
-                        <strong>Price TBD</strong>
+                        <div class="product-bottom">
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                            <strong>
+                                $13.00
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Los Spaghettis', 13.00)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- DRAGON -->
 
-            <!-- Ginger Gerat -->
-            <div class="product-card">
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
 
-                <div class="product-image">🧠</div>
+                    <div class="product-image">
 
-                <div class="product-info">
+                        <img
+                            src="images/brainrots/dragon-cannelloni.png"
+                            alt="Dragon Cannelloni">
 
-                    <span>STEAL A BRAINROT</span>
+                    </div>
 
-                    <h3>Ginger Gerat</h3>
+                    <div class="product-info">
 
-                    <p class="rarity">
-                        Value: 75M
-                    </p>
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
 
-                    <div class="product-bottom">
+                        <h3>
+                            Dragon Cannelloni
+                        </h3>
 
-                        <strong>Price TBD</strong>
+                        <p class="rarity">
+                            Value: TBD
+                        </p>
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                        <p class="rarity">
+                            🟢 Stock: 4
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $12.49
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Dragon Cannelloni', 12.49)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- TIC GYM BROS -->
 
-            <!-- La Ginger Sekolah -->
-            <div class="product-card">
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
 
-                <div class="product-image">🧠</div>
+                    <div class="product-image">
 
-                <div class="product-info">
+                        <img
+                            src="images/brainrots/tic-gym-bros.png"
+                            alt="Tic Gym Bros">
 
-                    <span>STEAL A BRAINROT</span>
+                    </div>
 
-                    <h3>La Ginger Sekolah</h3>
+                    <div class="product-info">
 
-                    <p class="rarity">
-                        Value: 75M
-                    </p>
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
 
-                    <div class="product-bottom">
+                        <h3>
+                            Tic Gym Bros
+                        </h3>
 
-                        <strong>Price TBD</strong>
+                        <p class="rarity">
+                            Value: TBD
+                        </p>
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                        <p class="rarity">
+                            🟢 Stock: 7
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $8.99
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Tic Gym Bros', 8.99)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- DUG DUG DUG -->
 
-            <!-- Spooky and Pumpky -->
-            <div class="product-card">
+                <div
+                    class="product-card"
+                    data-stock="in-stock">
 
-                <div class="product-image">🧠</div>
+                    <div class="product-image">
 
-                <div class="product-info">
+                        <img
+                            src="images/brainrots/dug-dug-dug.png"
+                            alt="Dug Dug Dug">
 
-                    <span>STEAL A BRAINROT</span>
+                    </div>
 
-                    <h3>Spooky and Pumpky</h3>
+                    <div class="product-info">
 
-                    <p class="rarity">
-                        Value: 80M
-                    </p>
+                        <span>
+                            STEAL A BRAINROT
+                        </span>
 
-                    <div class="product-bottom">
+                        <h3>
+                            Dug Dug Dug
+                        </h3>
 
-                        <strong>Price TBD</strong>
+                        <p class="rarity">
+                            Value: TBD
+                        </p>
 
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
+                        <p class="rarity">
+                            🟢 Stock: 9
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $6.49
+                            </strong>
+
+                            <button
+                                onclick="addToCart('Dug Dug Dug', 6.49)">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-
-            <!-- Los Sekolahs -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Los Sekolahs</h3>
-
-                    <p class="rarity">
-                        Value: 85M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- La Casa Boo -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>La Casa Boo</h3>
-
-                    <p class="rarity">
-                        Value: 100M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Fragrama and Chocrama -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Fragrama and Chocrama</h3>
-
-                    <p class="rarity">
-                        Value: 100M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- La Secret Combinasion -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>La Secret Combinasion</h3>
-
-                    <p class="rarity">
-                        Value: 125M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Reinito Sleighito -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Reinito Sleighito</h3>
-
-                    <p class="rarity">
-                        Value: 140M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Ketupat Bros -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Ketupat Bros</h3>
-
-                    <p class="rarity">
-                        Value: 145M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Burguro And Fryuro -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Burguro And Fryuro</h3>
-
-                    <p class="rarity">
-                        Value: 150M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Cooki and Milki -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Cooki and Milki</h3>
-
-                    <p class="rarity">
-                        Value: 155M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Capitano Moby -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Capitano Moby</h3>
-
-                    <p class="rarity">
-                        Value: 160M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Cerberus -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Cerberus</h3>
-
-                    <p class="rarity">
-                        Value: 175M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- La Supreme Combinasion -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>La Supreme Combinasion</h3>
-
-                    <p class="rarity">
-                        Value: 200M
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Dragon Cannelloni -->
-            <div class="product-card">
-
-                <div class="product-image">🧠</div>
-
-                <div class="product-info">
-
-                    <span>STEAL A BRAINROT</span>
-
-                    <h3>Dragon Cannelloni</h3>
-
-                    <p class="rarity">
-                        Value: TBD
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>Price TBD</strong>
-
-                        <button onclick="alert('Price and stock need to be set first.')">
-                            Coming Soon
-                        </button>
-
-                    </div>
-
-                </div>
 
             </div>
 
@@ -661,7 +610,32 @@
 
     </section>
 
+
+    <!-- SUPPORT -->
+
+    <section
+        class="support"
+        id="support">
+
+        <h2>
+            Need Help?
+        </h2>
+
+        <p>
+            Bloxypay support will be available soon.
+        </p>
+
+        <button
+            onclick="contactSupport()">
+
+            Contact Support
+
+        </button>
+
+    </section>
+
 </main>
+
 
 <footer>
 
@@ -675,13 +649,9 @@
 
 </footer>
 
+
 <script src="js/app.js"></script>
 
 </body>
-</html>
-.product-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    display: block;
-}
+
+</html>}

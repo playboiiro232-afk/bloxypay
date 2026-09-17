@@ -831,3 +831,146 @@ footer {
     }
 
 }
+/* ============================ */
+/* CHECKOUT */
+/* ============================ */
+
+.checkout-page {
+
+    min-height: 650px;
+
+    padding: 90px 8%;
+
+}
+
+
+.checkout-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+
+}
+
+
+.checkout-box {
+
+    background: #100b18;
+
+    border: 1px solid #261a35;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+}
+
+
+.checkout-box h2 {
+
+    margin-bottom: 25px;
+
+}
+
+
+.checkout-box label {
+
+    display: block;
+
+    color: #aaa2b5;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+}
+
+
+.checkout-box input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    background: #07050d;
+
+    border: 1px solid #382252;
+
+    border-radius: 8px;
+
+    color: white;
+
+    outline: none;
+
+}
+
+
+.checkout-box input:focus {
+
+    border-color: #9333ea;
+
+}
+
+
+.checkout-note {
+
+    color: #81798d;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-top: 10px;
+
+}
+
+
+.checkout-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #261a35;
+
+}
+
+
+.checkout-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+}
+
+
+.checkout-button {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .checkout-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
